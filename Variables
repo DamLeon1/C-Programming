@@ -1,0 +1,8 @@
+Variable = A reusable container for a value, behaves as if it were the value it contains
+int = Integer, a whole number, no decimals, 4 bytes (32 bits) of memory, -2,147,483,648 to 2,147,483,647. (%d)
+float = Floating point number, a number with a decimal, 4 bytes (32 bits) of memory, 6-7 digits of precision. (%f)
+double = Double precision floating point number, a number with a decimal, 8 bytes (64 bits) of memory, 15-16 digits of precision. (%f or %lf)
+char = Character, a single letter or symbol, 1 byte (8 bits) of memory, 'a' to 'z', 'A' to 'Z', '0' to '9', and special characters. (%c, char example = ‘character’)
+%d = when setting a whole number (base 10). %f = floating point value. To specify precision in double or float do %.(how many numbers to go to)f.
+String = A sequence of characters, an array of characters, 1 byte (8 bits) per character, "Hello World", "Computer Engineering", etc. (char example[] = “string”;)
+bool = Boolean, a true (1) or false (0) value, 1 byte (8 bits) of memory, true or false (requires <stdbool.h>). (bool example = true or false;)
