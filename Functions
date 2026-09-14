@@ -1,0 +1,29 @@
+Function = a block of code that performs a specific task and can be called multiple times.
+return_type function_name(arguments) {
+    // Code to be executed
+    return value;
+}
+
+Return Type: The data type of the result the function gives back (e.g., int, float, char). If it doesn't return anything, use void.
+Function Name: The unique name you give the function (like calculateTax or printMessage).
+Arguments/Parameters: The inputs you pass into the function, defined by their data type and a temporary name.
+Return Statement: The return keyword sends the final answer/value back to where the function was called and stops the function.
+When calling the function in another, use the function_name(arguments).
+Variable Scope = Refers to where a variable is recognized and accessible. Variable can share the same name if they're in different scopes (within curly braces {})
+Each scope can only view what's inside their own scope, when using functions you need to pass in arguments to use them
+Variable inside their own scope {} are called local scopes, global scopes are variables outside any functions
+ 
+Example:
+//int result = -1; // global scope
+int add(int x, int y) {
+    int result = x + y;
+    return result;
+}
+
+int main() {
+
+    int result = add(3, 4);
+    printf("%d", result);
+
+    return 0;
+}
