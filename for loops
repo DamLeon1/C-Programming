@@ -1,0 +1,44 @@
+for loop = Repeat some code a limited number of times
+for (Initialization; Condition; update) { // code to be executed }
+The update can be ++, += #, -= #, – 
+To use sleep(), on windows use #include <windows.h> and is Sleep() and Precision: Milliseconds (1 second = 1,000 milliseconds). Example: Sleep(5000); pauses execution for 5 seconds.
+break = Break out of the loop (STOP). continue = skip current cycle of a loop (SKIP)
+Nested loops are loops within loops
+
+
+int main() {
+
+    for (int i = 10; i >= 0; i--) {
+        Sleep(1000);
+        printf("%d\n", i);
+    }
+
+    printf("Happy New Year");
+    return 0;
+}
+
+
+Nested For Loop:
+int main() {
+
+    int rows = 0;
+    int columns = 0;
+    char symbol = '\0';
+
+    printf("Enter the # of rows: ");
+    scanf("%d", &rows);
+
+    printf("Enter the # of columns: ");
+    scanf("%d", &columns);
+
+    printf("Enter a symbol to use: ");
+    scanf(" %c", &symbol);
+
+    for (int i = 0; i < rows; i++){
+        for (int i = 0; i < columns; i++) {
+            printf(" %c", symbol);
+        }
+        printf("\n");
+    }
+    return 0;
+}
