@@ -1,0 +1,27 @@
+While loop = Continue some code WHILE the condition remains true, condition must be true for us to enter while loop
+do-while loop = Do a piece of code once then check the condition at the end
+
+
+
+int main() {
+
+
+    int number = 0;
+
+
+    do {
+        printf("Enter a number greater than zero: ");
+        scanf("%d", &number);
+    } while (number <= 0);
+
+
+    while (number <= 0) {
+        printf("Enter a number greater than zero: ");
+        scanf("%d", &number);
+    }
+
+
+    return 0;
+}
+
+
