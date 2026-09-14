@@ -1,0 +1,36 @@
+Function Prototype = Provide the compiler with information about functions: name, return type, and parameters before its actual definition.
+Enables type checking and allows functions to be used before they're defined. Improves readability, organization, and helps prevent errors
+
+
+void hello(char name[], int age); // Function Prototype
+bool ageCheck(int age); // Function Prototype
+
+
+int main() {
+    hello("Bob", 30);
+
+
+    if (ageCheck(18)){
+        printf("You are old enough");
+    }
+    else {
+        printf("You are too young");
+    }
+
+
+    return 0;
+}
+void hello(char name[], int age) {
+    printf("Hello %s\n", name);
+    printf("You are %d years old\n", age);
+}
+
+
+bool ageCheck(int age) {
+    if (age >= 16) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
