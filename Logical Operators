@@ -1,0 +1,29 @@
+Logical Operators = &&, ||, !, used to combine or modify boolean expressions
+&& = and, where condition must be true
+|| = or, where at least one condition must be true
+! = not, where the condition is inverted, reverse the true or false value
+
+Examples: 
+ bool isSunny = true;
+
+
+    if (!isSunny) {
+        printf("It is cloudy");
+    }
+    else {
+        printf("It is sunny");
+    }
+
+ if (temp > 0 || temp < 30) {
+        printf("The temperature is GOOD");
+    }
+    else {
+        printf("The temperature is BAD");
+    }
+
+if (temp > 0 && temp < 30) {
+        printf("The temperature is GOOD");
+    }
+    else {
+        printf("The temperature is BAD");
+    }
