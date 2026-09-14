@@ -1,0 +1,6 @@
+Format Specifiers = A placeholder in a string that is replaced with a value when the string is printed, used with printf, %d for int, %f for float, %lf for double, %c for char, %s for string, %d for bool (0 or 1). Control how data is displayed or interpreted.
+Width and Precision = Control the minimum number of characters to be printed (width) and the number of digits to be printed after the decimal point (precision) for floating-point numbers, specified in the format specifier, e.g. %.2f for 2 decimal places.
+Right-alignment and Left-alignment = Control the alignment of the output within the specified width, right-alignment is the default (e.g. %5d), left-alignment is specified with a minus sign (e.g. %-5d).
+Leading zeros = Control the padding of the output with leading zeros instead of spaces, specified with a zero (e.g. %05d for 5 characters wide with leading zeros).
+Escape Sequences = Special characters that are used to represent certain whitespace characters or to include special characters in a string, e.g. \n for new line, \t for tab, \\ for backslash, \" for double quote.
++ and - signs = Control the display of the sign for numeric values, + forces a sign to be displayed for both positive and negative numbers (e.g. %+d), - is used for left-alignment (e.g. %-5d).
