@@ -1,0 +1,8 @@
+scanf(“%d,f,c”, &example);
+& is the address-of operator, which returns the memory address of a variable. This is necessary for scanf to know where to store the input value. Without &age, scanf would not know where to store the input value.
+\n is used to consume the newline character left in the input buffer. This prevents the newline character from being read as the next input. This is particularly important when mixing scanf with other input functions.
+scanf can't read the newline character left in the input buffer, which can cause unexpected behavior.
+fgets is an alternative to scanf for reading input from the standard input stream. fgets (char *buffer, int size, FILE *stream), and reads the whole line including the newline character (\n) and is mainly used to read a string input. fgets(example, sizeof(example), stdin);  , example[strlen(example) - 1] = ‘\0’; , need to put #include <string.h>
+getchar() is used to consume the newline character left in the input buffer.
+strlen() is used to get the length of a string. Need #include <string.h> to use.
+In scanf if using “%c” you must put a space like “ %c”.
