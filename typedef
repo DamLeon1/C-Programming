@@ -1,0 +1,34 @@
+ typedef existing_type new_name;
+ typedef = reserved keyword that gives an existing datatype a "nickname", helps simplify complex types and improves code readability
+ For strings you specify the size including the null terminator and when using them you don’t need the [].
+
+#include <stdio.h>
+
+
+typedef int Number;
+typedef char String[50]; // Need to specify size
+typedef char Initials[3]; // Need to include '\0' at the end
+
+
+int main() {
+ 
+   /* Number x = 3;
+    Number y = 4;
+    Number z = x + y;
+    printf("%d", z);
+    */
+   
+    Initials user1 = "DL";
+    Initials user2 = "SS";
+    Initials user3 = "BN";
+    Initials user4 = "JK";
+
+
+    printf("%s\n", user1);
+    printf("%s\n", user2);
+    printf("%s\n", user3);
+    printf("%s\n", user4);
+
+
+    return 0;
+}
