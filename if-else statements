@@ -1,0 +1,13 @@
+if statement = Do something if a condition is true. If the condition is false, do something else.
+== is the equality operator
+!= is the not equal operator
+< is the less than operator
+> is the greater than operator
+<= is the less than or equal to operator
+>= is the greater than or equal to operator
+&& is the logical AND operator
+|| is the logical OR operator
+! is the logical NOT operator
+Order of conditions matters in if-else statements
+Nested if statements are if statements within other if statements
+Ternary operator ? = shorthand for if-else statements, (condition) ? value_if_true : value_if_false;
