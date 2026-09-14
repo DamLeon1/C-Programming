@@ -1,0 +1,27 @@
+Switch = An alternative to if-else statements for handling multiple conditions. More efficient for multiple conditions and fixed integer values.
+Switches can also be used with char. 
+The switch statement evaluates the expression and compares it with each case label.
+
+
+Example: can be integers as well instead of characters
+switch(operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            if (num2 == 0){
+                printf("Can't divide by zero\n");
+            }
+            else {
+               result = num1 / num2;
+            }
+            break;
+        default:
+            printf("Invalide operator or number\n");
+    }
