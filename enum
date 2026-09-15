@@ -1,0 +1,49 @@
+enum = A user defined data type that consists of a set of named integer constants. Benefit: Replaces numbers with readable names
+Default Values: Values start at 0 and increment by 1 automatically.
+Custom Values: You can explicitly assign integers at any point; subsequent unassigned items will increment from that value.
+All stuff inside need to be all capitalized
+
+
+typedef enum {
+    SUCCESS, FAILURE, PENDING
+}Status;
+
+
+void connectStatus(Status status);
+
+
+int main() {
+  Status status = PENDING;
+
+
+    connectStatus(status);
+
+
+    return 0;
+}
+
+
+void connectStatus(Status status) {
+    switch (status) {
+        case SUCCESS:
+            printf("Connection success");
+            break;
+        case FAILURE:
+            printf("Couldn't conncet");
+            break;
+        case PENDING:
+            printf("Pending...");
+            break;
+    }
+}
+
+
+
+enum Status {
+    PENDING,    // 0
+    APPROVED,   // 1
+    REJECTED = 5,
+    UNKNOWN     // 6 (increments from 5)
+};
+
+enum Status current_status = APPROVED;
