@@ -1,0 +1,72 @@
+struct = A custom container that holds multiple pieces of related information. Similar to Objects in other languages.
+To access a member in a struct use the dot ( . ) (member access operator), example."member name"
+The -> operator in C is used to access a member of a struct when you have a pointer to that struct.
+For example, if struct Student *ptr points to a student, you use ptr->age to access the student's age.
+It is essentially a shortcut for (*ptr).age, while you use the . operator when you have the actual struct variable itself. 
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+
+
+typedef struct {
+    char name[50];
+    int age;
+    float gpa;
+    bool isFullTime;
+} Student;
+
+
+void printStudent(Student student);
+
+
+int main() {
+    Student student1 = {"Spongebob", 20, 3.2, true};
+    Student student2 = {"Patrick", 20, 2.3, false};
+    Student student3 = {0};
+
+
+    strcpy(student3.name, "Sandy");
+    student3.age = 20;
+    student3.gpa = 3.1;
+    student3.isFullTime = true;
+
+
+    printStudent(student1);
+    return 0;
+}
+
+
+void printStudent(Student student) {
+    printf("%s\n%d\n%.2f\n%s", student.name, student.age, student.gpa, (student.isFullTime) ? "Yes" : "No");
+}
+
+Array of structs = Array where each element contains a struct {}. Helps organize and groups together related data
+
+#include <stdio.h>
+
+
+typedef struct {
+    char model[25];
+    int year;
+    int price;
+} Car;
+
+
+int main() {
+
+
+    Car cars[] = {{"Mustang", 2025, 32000},
+                  {"Nissan", 1995, 22000},
+                  {"Infiniti", 2025, 40000}};
+   
+    int number = sizeof(cars) / sizeof(cars[0]);
+
+
+    for (int i = 0; i < number; i++) {
+        printf("%s %d $%d\n", cars[i].model, cars[i].year, cars[i].price);
+    }
+
+
+    return 0;
+}
