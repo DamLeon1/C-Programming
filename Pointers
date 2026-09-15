@@ -1,0 +1,39 @@
+Pointer = A variable that stores the memory address of another variable. Benefit: They help avoid wasting memory by allowing you to pass the address of a large data structure instead of copying the entire data
+* = dereference operator used to make pointers, accesses the actual value stored at the address held by the pointer.
+& = gives you the memory address (hex) of a variable.
+When there’s a pointer in a function name, you need to pass the address of whatever is needed.
+
+
+#include <stdio.h>
+
+
+void birthday(int *age);
+
+
+int main() {
+
+
+    int age = 25;
+    int *pAge = &age;
+
+
+    printf("%p\n", &age);
+    printf("%p\n", pAge);
+
+
+    birthday(pAge);
+    printf("You are %d years old", age);
+    return 0;
+}
+
+
+void birthday(int *age) {
+    (*age)++;
+}
+
+
+int score = 95;
+int *ptr = &score; // ptr now holds the memory address of score
+
+printf("%d", *ptr); // Prints 95 (dereferencing)
+*ptr = 100;         // score is now 100
