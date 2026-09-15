@@ -1,0 +1,82 @@
+Writing to a file in fopen(“example.txt or specified path”, “w/r/…”), a new file can be used to write to (example.txt) or a specified path can be inputted as well.
+fprintf(pFile, “Age: %d”, age): Best for mixed data types, variable, and formatted text.
+fputs(“Hello World”, pFile): Best for plain strings or whole lines of text without variables.
+fputc(‘A’, pFile): Best for single characters or writing file data byte-by-byte.
+
+
+#include <stdio.h>
+
+
+int main() {
+
+
+    FILE *pFile = fopen("output.txt", "w");
+
+
+    char text[] = "Hello World!";
+
+
+    if (pFile == NULL) {
+        printf("Error opening file");
+        return 1; // Exit code - Error
+    }
+
+
+    fprintf(pFile, "%s", text);
+
+
+    printf("File was written successfully\n");
+
+
+    fclose(pFile);
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+Reading a file needs a buffer to temporarily hold the data to be read and use 1024 as a size to hold the info (could use higher if needed). 
+The while() reads the file until it reaches NULL and that means that the data is all read.
+fgets(buffer, size, pFile): Best for text files. Reads line-by-line safely by enforcing size limits.
+fscanf(pFile, "%s %d", str, &num): Best for formatted data. Parses spaces, strings, and numeric values seamlessly.
+fgetc(pFile): Best for character parsing. Reads the file strictly one character at a time.
+fread(buffer, size, count, pFile): Best for binary structures. Reads raw blocks of raw memory efficiently
+
+#include <stdio.h>
+
+
+int main() {
+
+
+    FILE *pFile = fopen("input.txt", "r");
+
+
+    char buffer[1024] = {0};
+
+
+    if (pFile == NULL) {
+        printf("Could not open file");
+        return 1; // Exit Error
+    }
+
+
+    while(fgets(buffer, sizeof(buffer), pFile) != NULL) {
+        printf("%s", buffer);
+    }
+
+
+    fclose(pFile);
+
+
+    return 0;
+}
+
+
