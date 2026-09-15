@@ -1,0 +1,154 @@
+malloc() = A function in C that dynamically allocates a specified number of bytes in memory. malloc(size_t size), size: Total number of bytes to allocate.
+Must also free() the dynamic memory
+Dynamic string buffers using scanf don't use the &, scanf(“%s”, example);.
+
+
+#include <stdio.h>
+#include <stdlib.h> //for free()
+
+
+int main() {
+
+
+    int number = 0;
+    printf("Enter the number of grades: ");
+    scanf("%d", &number);
+
+
+    char *grades = malloc(number * sizeof(char));
+
+
+    if (grades == NULL) {
+        printf("Memory allocation failed");
+        return 1;
+    }
+
+
+    for (int i = 0; i < number; i++) {
+        printf("Enter grade #%d: ", i+1);
+        scanf(" %c", &grades[i]);
+    }
+
+
+    for (int i = 0; i < number; i++) {
+        printf("%c ", grades[i]);
+    }
+
+
+    free(grades); // returning "rented" space back to the OS
+    grades = NULL; // Avoids dangling pointers
+
+
+    return 0;
+}
+
+
+
+
+calloc() = Contiguous Allocation. Allocates memory dynamically and sets all allocated bytes to 0. malloc() is faster, but calloc() leads to less bugs, calloc(#, size)
+
+#include <stdio.h>
+#include <stdlib.h> // For calloc() and free()
+
+
+int main() {
+
+
+    int number = 0;
+    printf("Enter the number of players: ");
+    scanf("%d", &number);
+
+
+    int *scores = calloc(number, sizeof(int));
+
+
+    if (scores == NULL) {
+        printf("Memroy allocation failed");
+        return 1;
+    }
+
+
+    for (int i = 0; i < number; i++) {
+        printf("Enter score #%d ", i+1);
+        scanf("%d", &scores[i]);
+    }
+
+
+    for (int i = 0; i < number; i++) {
+        printf("%d ", scores[i]);
+    }
+   
+    free(scores);
+    scores = NULL;
+
+
+    return 0;
+}
+
+
+
+
+
+
+realloc() = Reallocation. Resize previously allocated memory. realloc(ptr, bytes).
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main() {
+
+
+    int number = 0;
+    printf("Enter the number of prices: ");
+    scanf("%d", &number);
+
+
+    float *prices = malloc(number * sizeof(float));
+
+
+    if (prices == NULL) {
+        printf("Memory allocation failed");
+        return 1;
+    }
+
+
+    for (int i = 0; i < number; i++) {
+        printf("Enter prices #%d ", i+1);
+        scanf("%f", &prices[i]);
+    }
+
+
+    int newNumber = 0;
+    printf("Enter a new number of prices: ");
+    scanf("%d", &newNumber);
+
+
+    float *temp = realloc(prices, newNumber * sizeof(float));
+
+
+    if (temp == NULL) {
+        printf("Reallocation failed");
+    }
+    else {
+        prices = temp;
+
+
+        for (int i = number; i < newNumber; i++) {
+        printf("Enter prices #%d ", i+1);
+        scanf("%f", &prices[i]);
+     }
+         for (int i = 0; i < newNumber; i++) {
+        printf("$%.2f ", prices[i]);
+     }
+    }
+
+
+    free(prices);
+    prices = NULL;
+
+
+    return 0;
+}
+
